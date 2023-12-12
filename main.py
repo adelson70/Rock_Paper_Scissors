@@ -33,6 +33,7 @@ def centralizar_tela():
 
 def salvar_partidas():
     global placar
+    global nome_usuario
 
     if len(placar['rodada']) == 0:
         return messagebox.showerror(f'Erro ao Salvar!',f'Você Não Jogou Nenhuma Partida Ainda!')
@@ -42,7 +43,11 @@ def salvar_partidas():
 
     # Verifica se o usuário escolheu um arquivo
     if arquivo:
+        name_user = str(nome_usuario.get())
         df = pd.DataFrame(placar)
+        df.rename(columns={
+            'usuario':f'{name_user}',
+        },inplace=True)
 
         # Obtém o nome do arquivo a partir do caminho completo
         nome = arquivo.split("/")[-1].split(".")[0]
