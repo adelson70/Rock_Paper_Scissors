@@ -111,8 +111,8 @@ fonte_personalizada = Font(family="Helvetica", size=11, weight="bold")
 
 # Opção para o usuário escolher um nome de jogador
 tk.Label(text='Digite seu nome',font=fonte_personalizada).pack(pady=10)
-nome_usuario = tk.Entry(janela)
-nome_usuario.pack(pady=10)
+nome_usuario = tk.Entry(janela,width=15)
+nome_usuario.pack(pady=9)
 
 # Parte da janela onde tem os botões para o jogador escolher a sua opção
 tk.Label(text='Escolha uma opção para jogar!',font=fonte_personalizada).pack(pady=10)
