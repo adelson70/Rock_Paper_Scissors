@@ -4,11 +4,17 @@ from tkinter import filedialog
 from tkinter.font import Font
 
 
-def ajustar_tamanho_janela():
-    janela.update_idletasks()
-    largura = janela.winfo_reqwidth()
-    altura = janela.winfo_reqheight()    
-    janela.geometry(f"{largura+150}x{altura}")
+def centralizar_tela():
+    largura = 300
+    altura = 200
+
+    largura_tela = janela.winfo_screenwidth()
+    altura_tela = janela.winfo_screenheight()
+
+    x = (largura_tela- largura) // 2
+    y = (altura_tela- altura) // 2
+
+    janela.geometry(f"{largura}x{altura}+{x}+{y}")
 
 def jogar():
     ...
@@ -32,6 +38,6 @@ botao_pedra.pack(pady=10)
 botao_papel.pack(pady=10)
 botao_tesoura.pack(pady=10)
 
-ajustar_tamanho_janela()
+centralizar_tela()
 
 janela.mainloop()
