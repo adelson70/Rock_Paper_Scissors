@@ -38,7 +38,6 @@ def salvar_partidas():
     if len(placar['rodada']) == 0:
         return messagebox.showerror(f'Erro ao Salvar!',f'Você Não Jogou Nenhuma Partida Ainda!')
 
-
     arquivo = filedialog.asksaveasfilename(defaultextension=".xlsx", filetypes=[("Arquivos Excel", "*.xlsx"), ("Todos os arquivos", "*.*")])
 
     # Verifica se o usuário escolheu um arquivo
